@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
 
 //----------------------------------------- END OF IMPORTS---------------------------------------------------
 mongoose.connect(
-  "mongodb+srv://koshka:ringo@cluster0.hfy7n.mongodb.net/test?retryWrites=true&w=majority",
+  "mongodb+srv://zack:cody@cluster0.9tjq7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -83,6 +83,7 @@ app.post("/register", (req, res) => {
 
       const newUser = new User({
         username: req.body.username,
+        email: req.body.email,
         password: req.body.password,
       });
       await newUser.save();
